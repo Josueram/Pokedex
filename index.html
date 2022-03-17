@@ -5,14 +5,100 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokedex</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="pokedex">
 
-  <h1>Pokedex</h1>
-  <input type="text" placeholder="Ingrese el nombre de un Pokemón" id="pokeName" name="pokeName"> <br>
-  <img src="https://cdn-icons-png.flaticon.com/512/528/528101.png" alt="Imagen de una Pokeball" width="150px" id="pokeImg"> <br>
-  <button onclick="fetchPokemon()">Cambiar Pokemón</button>
-  
+    <!-- Left Side -->
+    <div class="pokedex-left">
+      <div class="pokedex-lights-container">
+        <div class="pokedex-lights-lg"></div>
+        <div class="pokedex-lights-sm-container">
+          <div class="pokedex-lights-sm-light one"></div>
+          <div class="pokedex-lights-sm-light two"></div>
+          <div class="pokedex-lights-sm-light three"></div>
+        </div>
+      </div>
+      
+      <div class="pokedex-screen-cut"></div>
+      
+      <div class="pokedex-screen">
+        <div class="pokedex-screen-top">
+          <div class="pokedex-screen-light"></div>
+          <div class="pokedex-screen-light"></div>
+        </div>
+        
+        <div class="pokedex-screen-image-container">
+          <img class="pokedex-screen-image" src=""/>
+          <h2 class="pokemon-name"></h2>
+        </div>
+        
+        <div class="pokedex-screen-bottom">
+          <div class="pokedex-screen-button"></div>
+          <div class="pokedex-screen-vents">
+            <div class="pokedex-screen-vent"></div>
+            <div class="pokedex-screen-vent"></div>
+            <div class="pokedex-screen-vent"></div>
+            <div class="pokedex-screen-vent"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pokedex-controls">
+        <div class="pokedex-controls-button"></div>
+        <div class="pokedex-controls-longButton redButton"></div>
+        <div class="pokedex-controls-longButton blueButton"></div>
+      </div>
+      
+      <div class="pokedex-pad">
+        <div class="pokedex-pad-middle">
+          <div class="pokedex-pad-middle-circle"></div>
+        </div>
+        <div class="pokedex-pad-v"></div>
+        <div class="pokedex-pad-h"></div>
+      </div>
+      
+      <div class="pokedex-smallScreen"></div>
+    </div>
+    
+    <!-- Right Side -->
+    <div class="pokedex-right">      
+      <div class="search-container">
+        <input class="search-box" type="text" placeholder="Enter a Pokemon"/>
+        <button class="search-button" onclick="fetchPokemon()">
+          <i class="material-icons icon search-icon">Go</i>
+        </button>
+      </div>
+      
+      <div class="pokedex-info-container">
+        <ul class="pokemon-types"></ul> <br>
+        <ul class="pokemon-stats"></ul>
+      </div>
+      
+      <div class="pokedex-buttons"></div>
+      
+      <div class="pokedex-longButtons">
+        <div class="pokedex-longButton"></div>
+        <div class="pokedex-longButton"></div>
+      </div>
+      
+      <div class="pokedex-dualButtons">
+        <div class="pokedex-dualButton first"></div>
+        <div class="pokedex-dualButton second"></div>
+      </div>
+      
+      <div class="pokedex-goldButton"></div>
+      
+      <div class="pokedex-blackButtons">
+        <div class="pokedex-blackButton"></div>
+        <div class="pokedex-blackButton"></div>
+      </div>
+    </div>
+  </div>
   <footer>
     <script src="./pokedex.js"></script>
   </footer>

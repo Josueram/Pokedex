@@ -1,8 +1,8 @@
 const fetchPokemon = () => {
-  const pokeInput = document.getElementById("pokeName");
-  let pokeName = pokeInput.value.toLowerCase();
+  const pokeInput = document.getElementById("pokeInput");
+  let pokemon = pokeInput.value.toLowerCase();
 
-  const url = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
+  const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
 
   fetch(url)
     .then((res) => {
@@ -14,13 +14,43 @@ const fetchPokemon = () => {
     })
     .then((data) => {
       console.log(data);
-      let pokeImg = data.sprites.front_default;
-      console.log(pokeImg);
-      pokeImage(pokeImg);
-    });
+
+      let name = data.name;
+      let image = data.sprites.front_default;
+      let type = data.types;
+      let stats = data.stats;
+
+      pokeName(name);
+      pokeImage(image);
+      pokeType(type);
+      pokeStats(stats);
+      return data;
+    })
+    .then((data) => {
+      let image = data.sprites.front_default;
+    })
 };
 
 const pokeImage = (url) => {
-  const pokeImg = document.getElementById("pokeImg");
-  pokeImg.src = url;
+  const image = document.getElementById("pokeImg");
+  image.src = url;
 };
+
+const pokeName = (name) => {
+  const namePokemon = document.getElementById("pokeName").innerHTML = name;
+};
+
+const pokeType = (types) => {
+  for (let i = 0; i <= types.length; i++) {
+    let name = types[i].type.name;
+    console.log(name)
+    const typePokemon = document.getElementById("type").innerHTML += name + " ";
+  }
+};
+
+const pokeStats = (stats) => {
+  for (let i = 0; i <= stats.length; i++) {
+    let { base_stat } = stats[i];
+    const statsPokemon = document.getElementById("stats").innerHTML += base_stat + " ";
+  }
+}
