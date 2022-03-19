@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokedex</title>
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
@@ -68,14 +68,14 @@
     <!-- Right Side -->
     <div class="pokedex-right">      
       <div class="search-container">
-        <input class="search-box" type="text" placeholder="Enter a Pokemon"/>
+        <input class="search-box" type="text" placeholder="Ingrese un Pokemón"/>
         <button class="search-button" onclick="fetchPokemon()">
-          <i class="material-icons icon search-icon">Go</i>
+          <i class="material-icons icon search-icon">Buscar</i>
         </button>
       </div>
       
       <div class="pokedex-info-container">
-        <ul class="pokemon-types"></ul> <br>
+        <ul class="pokemon-types"></ul> 
         <ul class="pokemon-stats"></ul>
       </div>
       
@@ -94,13 +94,17 @@
       <div class="pokedex-goldButton"></div>
       
       <div class="pokedex-blackButtons">
-        <div class="pokedex-blackButton"></div>
-        <div class="pokedex-blackButton"></div>
+        <div class="pokedex-blackButton">
+          <p class="pokemon-ability1"></p>
+        </div>
+        <div class="pokedex-blackButton">
+          <p class="pokemon-ability2"></p>
+        </div>
       </div>
     </div>
   </div>
   <footer>
-    <script src="./pokedex.js"></script>
+    <script src="./js/pokedex.js"></script>
   </footer>
 </body>
 </html>
